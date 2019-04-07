@@ -1,0 +1,5 @@
+profile: service
+defaultPackage: maps.service
+---
+testFramework: spock
+sourceLanguage: java
