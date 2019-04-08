@@ -17,7 +17,7 @@ import javax.validation.constraints.NotBlank;
 import java.util.List;
 
 @Controller("/api/maps")
-public class GatewayController {
+public class GatewayController implements MapOperations {
 
     private final MapClient mapClient;
 
