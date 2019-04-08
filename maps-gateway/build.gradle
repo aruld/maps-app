@@ -33,6 +33,7 @@ configurations {
 dependencies {
     annotationProcessor "io.micronaut:micronaut-inject-java"
     annotationProcessor "io.micronaut:micronaut-validation"
+    annotationProcessor "io.micronaut.configuration:micronaut-openapi"
     compile "io.micronaut:micronaut-discovery-client"
     compile "io.micronaut:micronaut-http-client"
     compile "io.micronaut:micronaut-http-server-netty"
@@ -40,6 +41,9 @@ dependencies {
     compile "io.micronaut:micronaut-validation"
     compile "io.micronaut:micronaut-runtime"
     compile project(':maps-common')
+    compile "io.swagger.core.v3:swagger-annotations"
+    compile 'io.micronaut:micronaut-views'
+    runtime 'com.github.jknack:handlebars:4.1.0'
     runtime "ch.qos.logback:logback-classic:1.2.3"
     testAnnotationProcessor "io.micronaut:micronaut-inject-java"
     testCompile "org.junit.jupiter:junit-jupiter-api"

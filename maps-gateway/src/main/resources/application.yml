@@ -1,8 +1,25 @@
 ---
+application:
+  api:
+    swagger:
+      path: /api-docs/swagger
+      version: 3.22.0
+      layout: StandaloneLayout
+      deepLinking: true
+      urls:
+        - name: maps-server
+          url: /api-docs/swagger/maps-server-0.1.yml
+---
 micronaut:
     application:
         name: maps-gateway
-
+    server:
+      port: 8080
+    router:
+      static-resources:
+        swagger:
+          paths: classpath:META-INF/swagger
+          mapping: ${application.api.swagger.path}/**
 ---
 consul:
   client:

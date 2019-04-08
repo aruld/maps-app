@@ -12,7 +12,7 @@ import maps.common.MapProvider;
 import javax.validation.constraints.NotBlank;
 import java.util.List;
 
-@Controller
+@Controller("/maps")
 public class MapController {
 
     private final MapService mapService;

@@ -12,7 +12,7 @@ import maps.common.MapProvider;
 import javax.validation.constraints.NotBlank;
 import java.util.List;
 
-@Client(id = "maps-service")
+@Client(id = "maps-service", path = "/maps")
 public interface MapClient {
 
     @Get("/{provider}")
@@ -26,6 +26,4 @@ public interface MapClient {
 
     @Get("/fastest")
     Single<Directions> fastest(@NotBlank @QueryValue String src, @NotBlank @QueryValue String dest);
-
-
 }
