@@ -3,6 +3,8 @@ package maps.gateway;
 import io.micronaut.http.annotation.Controller;
 import io.micronaut.http.annotation.Get;
 import io.micronaut.http.annotation.QueryValue;
+import io.micronaut.tracing.annotation.ContinueSpan;
+import io.micronaut.tracing.annotation.SpanTag;
 import io.reactivex.Single;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
@@ -32,7 +34,8 @@ public class GatewayController implements MapOperations {
                     @ApiResponse(description = "", content = @Content(mediaType = "application/json",
                             schema = @Schema(implementation = List.class)))}
     )
-    public Single<List<Direction>> map(@NotBlank MapProvider provider, @NotBlank @QueryValue String src, @NotBlank @QueryValue String dest) {
+    @ContinueSpan
+    public Single<List<Direction>> map(@SpanTag("maps.provider") @NotBlank MapProvider provider, @SpanTag("maps.src") @NotBlank @QueryValue String src, @SpanTag("maps.dest") @NotBlank @QueryValue String dest) {
         return mapClient.map(provider, src, dest);
     }
 

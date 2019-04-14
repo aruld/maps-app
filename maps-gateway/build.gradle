@@ -44,6 +44,13 @@ dependencies {
     compile "io.swagger.core.v3:swagger-annotations"
     compile 'io.micronaut:micronaut-views'
     compile 'io.micronaut.configuration:micronaut-hibernate-validator'
+    compile "io.micronaut.configuration:micronaut-micrometer-core"
+    compile "io.micronaut.configuration:micronaut-micrometer-registry-prometheus"
+    compile "io.micronaut:micronaut-management"
+    compile "io.micronaut:micronaut-tracing"
+    runtime 'io.zipkin.brave:brave-instrumentation-http'
+    runtime 'io.zipkin.reporter2:zipkin-reporter'
+    compile 'io.opentracing.brave:brave-opentracing'
     runtime 'com.github.jknack:handlebars:4.1.0'
     runtime "ch.qos.logback:logback-classic:1.2.3"
     testAnnotationProcessor "io.micronaut:micronaut-inject-java"
