@@ -49,7 +49,7 @@ dependencies {
         exclude group: "org.codehaus.groovy", module: "groovy-all"
     }
     testCompile "io.micronaut:micronaut-inject-groovy"
-    testCompile "io.micronaut.test:micronaut-test-spock:1.0.1"
+    testCompile "io.micronaut.test:micronaut-test-spock:1.0.2"
     testCompile "io.rest-assured:rest-assured:3.3.0"
 //    testRuntime "org.junit.jupiter:junit-jupiter-engine"
 }
