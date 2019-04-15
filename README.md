@@ -1,4 +1,4 @@
-Maps Micronaut sample application used in blog post:
+Maps Micronaut sample application used in blog posts:
 
 1. [Reactive microservices development with Micronaut](https://arul.dev/2019/03/31/reactive-microservices-development-with-micronaut/)
 
