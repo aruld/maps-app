@@ -1,0 +1,6 @@
+# Project exclude paths
+/.gradle/
+/maps-common/.gradle/
+/maps-common/build/
+/maps-common/out/
+/maps-common/out/production/classes/
