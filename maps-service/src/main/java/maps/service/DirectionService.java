@@ -37,7 +37,7 @@ public class DirectionService {
     }
 
 
-    public Single<List<Direction>> getDirections(String provider, LatLngPair latLngPair) {
+    public Single<List<Direction>> getDirections(MapProvider provider, LatLngPair latLngPair) {
 
         LOG.info("Requesting directions from provider {} for co-ordinates : {}", provider, latLngPair);
         // mock up the response
