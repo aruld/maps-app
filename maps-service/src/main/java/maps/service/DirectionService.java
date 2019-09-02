@@ -26,7 +26,7 @@ public class DirectionService {
     public Single<List<DirectionDTO>> getDirections(MapProvider provider, LatLngPair latLngPair) {
 
         LOG.info("Requesting directions from provider {} for co-ordinates : {}", provider, latLngPair);
-        List<DirectionDTO> directions = directionRepository.findDirections(latLngPair.getSrc().getPlace(), latLngPair.getDest().getPlace()).stream().map(direction -> new DirectionDTO(direction.getPosition(), direction.getText(), direction.getDistanceInMiles(), direction.getTimeInMinutes())).collect(Collectors.toList());
+        List<DirectionDTO> directions = directionRepository.findDirections(provider, latLngPair.getSrc().getPlace(), latLngPair.getDest().getPlace()).stream().map(direction -> new DirectionDTO(direction.getPosition(), direction.getText(), direction.getDistanceInMiles(), direction.getTimeInMinutes())).collect(Collectors.toList());
         return Single.just(directions);
     }
 }
