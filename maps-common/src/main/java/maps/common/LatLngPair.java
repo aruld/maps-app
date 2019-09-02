@@ -11,8 +11,8 @@ import java.util.Objects;
 @NoArgsConstructor
 public class LatLngPair {
 
-    private LatLng src;
-    private LatLng dest;
+    private LatLngDTO src;
+    private LatLngDTO dest;
 
     @Override
     public boolean equals(Object o) {

@@ -11,6 +11,6 @@ import java.util.List;
 @AllArgsConstructor
 public class Compares {
 
-    private List<Direction> google;
-    private List<Direction> apple;
+    private List<DirectionDTO> google;
+    private List<DirectionDTO> apple;
 }

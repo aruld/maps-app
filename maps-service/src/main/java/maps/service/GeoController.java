@@ -3,7 +3,8 @@ package maps.service;
 import io.micronaut.http.annotation.Controller;
 import io.micronaut.http.annotation.Get;
 import io.reactivex.Single;
-import maps.common.LatLng;
+import maps.common.LatLngDTO;
+import maps.common.Place;
 
 @Controller
 public class GeoController {
@@ -15,7 +16,7 @@ public class GeoController {
     }
 
     @Get("/places/{place}")
-    public Single<LatLng> getLatLng(Places place) {
+    public Single<LatLngDTO> getLatLng(Place place) {
         return geoService.getLatLng(place);
     }
 }

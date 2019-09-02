@@ -5,7 +5,7 @@ import io.micronaut.runtime.server.EmbeddedServer;
 import io.micronaut.test.annotation.MicronautTest;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.specification.RequestSpecification;
-import maps.common.LatLng;
+import maps.common.LatLngDTO;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
@@ -36,13 +36,13 @@ public class GeoControllerTest {
     @ParameterizedTest
     @CsvSource({"apple, 37.331699, -122.030190", "google, 37.423199, -122.084068"})
     public void getLatLng(String hq, double latitude, double longitude) {
-        LatLng latLng =
+        LatLngDTO latLng =
                 given().
                         spec(requestSpec).
                         pathParam("hq", hq).
                         when().
                         get("places/{hq}").
-                        as(LatLng.class);
+                        as(LatLngDTO.class);
 
         Assertions.assertEquals(latitude, latLng.getLat(), 0.1);
         Assertions.assertEquals(longitude, latLng.getLng(), 0.1);

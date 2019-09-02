@@ -3,7 +3,7 @@ package maps.service;
 import io.micronaut.http.annotation.Post;
 import io.micronaut.http.client.annotation.Client;
 import io.reactivex.Single;
-import maps.common.Direction;
+import maps.common.DirectionDTO;
 import maps.common.LatLngPair;
 import maps.common.MapProvider;
 
@@ -14,6 +14,6 @@ import java.util.List;
 public interface DirectionClient {
 
     @Post("/directions/{provider}")
-    Single<List<Direction>> getDirections(@NotBlank MapProvider provider, LatLngPair latLngPair);
+    Single<List<DirectionDTO>> getDirections(@NotBlank MapProvider provider, LatLngPair latLngPair);
 
 }

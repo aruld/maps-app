@@ -10,10 +10,7 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
-import maps.common.Compares;
-import maps.common.Direction;
-import maps.common.Directions;
-import maps.common.MapProvider;
+import maps.common.*;
 
 import javax.validation.constraints.NotBlank;
 import java.util.List;
@@ -35,7 +32,7 @@ public class GatewayController implements MapOperations {
                             schema = @Schema(implementation = List.class)))}
     )
     @ContinueSpan
-    public Single<List<Direction>> map(@SpanTag("maps.provider") @NotBlank MapProvider provider, @SpanTag("maps.src") @NotBlank @QueryValue String src, @SpanTag("maps.dest") @NotBlank @QueryValue String dest) {
+    public Single<List<DirectionDTO>> map(@SpanTag("maps.provider") @NotBlank MapProvider provider, @SpanTag("maps.src") @NotBlank @QueryValue Place src, @SpanTag("maps.dest") @NotBlank @QueryValue Place dest) {
         return mapClient.map(provider, src, dest);
     }
 
@@ -46,7 +43,7 @@ public class GatewayController implements MapOperations {
                     @ApiResponse(description = "", content = @Content(mediaType = "application/json",
                             schema = @Schema(implementation = Compares.class)))}
     )
-    public Single<Compares> compare(@NotBlank @QueryValue String src, @NotBlank @QueryValue String dest) {
+    public Single<Compares> compare(@NotBlank @QueryValue Place src, @NotBlank @QueryValue Place dest) {
         return mapClient.compare(src, dest);
     }
 
@@ -57,7 +54,7 @@ public class GatewayController implements MapOperations {
                     @ApiResponse(description = "", content = @Content(mediaType = "application/json",
                             schema = @Schema(implementation = Directions.class)))}
     )
-    public Single<Directions> shortest(@NotBlank @QueryValue String src, @NotBlank @QueryValue String dest) {
+    public Single<Directions> shortest(@NotBlank @QueryValue Place src, @NotBlank @QueryValue Place dest) {
         return mapClient.shortest(src, dest);
     }
 
@@ -68,7 +65,7 @@ public class GatewayController implements MapOperations {
                     @ApiResponse(description = "", content = @Content(mediaType = "application/json",
                             schema = @Schema(implementation = Directions.class)))}
     )
-    public Single<Directions> fastest(@NotBlank @QueryValue String src, @NotBlank @QueryValue String dest) {
+    public Single<Directions> fastest(@NotBlank @QueryValue Place src, @NotBlank @QueryValue Place dest) {
         return mapClient.fastest(src, dest);
     }
 }

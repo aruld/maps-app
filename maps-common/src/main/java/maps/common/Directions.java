@@ -12,7 +12,7 @@ import java.util.Optional;
 @AllArgsConstructor
 public class Directions {
 
-    private List<Direction> directions;
+    private List<DirectionDTO> directions;
     private Optional<Double> distanceInMiles;
     private Optional<Long> timeInMinutes;
 

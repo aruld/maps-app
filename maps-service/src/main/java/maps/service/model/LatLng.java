@@ -1,4 +1,6 @@
-package maps.common;
+package maps.service.model;
+
+import maps.common.Place;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -13,15 +15,15 @@ public class LatLng {
 
     private double lat;
     private double lng;
-    private String label;
+    private Place place;
 
     public LatLng() {
     }
 
-    public LatLng(double lat, double lng, String label) {
+    public LatLng(double lat, double lng, Place place) {
         this.lat = lat;
         this.lng = lng;
-        this.label = label;
+        this.place = place;
     }
 
     public Long getId() {
@@ -48,12 +50,12 @@ public class LatLng {
         this.lng = lng;
     }
 
-    public String getLabel() {
-        return label;
+    public Place getPlace() {
+        return place;
     }
 
-    public void setLabel(String label) {
-        this.label = label;
+    public void setPlace(Place place) {
+        this.place = place;
     }
 
     @Override
