@@ -16,6 +16,5 @@ dependencies {
     annotationProcessor "org.projectlombok:lombok:1.18.8"
     compile "io.micronaut:micronaut-core:1.2.0"
     compileOnly 'org.projectlombok:lombok:1.18.8'
-//    compileOnly "jakarta.persistence:jakarta.persistence-api:2.2.2"
     testCompile group: 'junit', name: 'junit', version: '4.12'
 }

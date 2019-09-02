@@ -12,7 +12,6 @@ public class LatLng {
     @Id
     @GeneratedValue
     private Long id;
-
     private double lat;
     private double lng;
     private Place place;

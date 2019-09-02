@@ -7,10 +7,16 @@ import javax.persistence.*;
 
 @Entity
 public class Direction {
-
     @Id
     @GeneratedValue
     private Long id;
+    private MapProvider provider;
+    private Place start;
+    private Place end;
+    private Integer position;
+    private String text;
+    private Double distanceInMiles;
+    private Long timeInMinutes;
 
     public Direction() {
     }
@@ -24,18 +30,6 @@ public class Direction {
         this.distanceInMiles = distanceInMiles;
         this.timeInMinutes = timeInMinutes;
     }
-
-    private MapProvider provider;
-    private Place start;
-    private Place end;
-
-    private Integer position;
-
-    private String text;
-
-    private Double distanceInMiles;
-
-    private Long timeInMinutes;
 
     public Long getId() {
         return id;
