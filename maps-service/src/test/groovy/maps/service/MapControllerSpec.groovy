@@ -7,7 +7,7 @@ import io.micronaut.runtime.server.EmbeddedServer
 import io.micronaut.test.annotation.MicronautTest
 import io.reactivex.Flowable
 import maps.common.Compares
-import maps.common.Direction
+import maps.common.DirectionDTO
 import maps.common.Directions
 import spock.lang.AutoCleanup
 import spock.lang.Shared
@@ -31,7 +31,7 @@ class MapControllerSpec extends Specification {
 
     void map() {
         given:
-        HttpResponse<List<Direction>> response = client.toBlocking().exchange("/google?src=apple&dest=google", List.class)
+        HttpResponse<List<DirectionDTO>> response = client.toBlocking().exchange("/google?src=apple&dest=google", List.class)
 
         expect:
         !response.body().empty

@@ -55,8 +55,8 @@ public class Bootstrap implements ApplicationEventListener<ServerStartupEvent> {
                 new Direction(MapProvider.apple, Place.google, Place.apple, 4, "Take right onto Charleston Rd", 0.3, 1L),
                 new Direction(MapProvider.apple, Place.google, Place.apple, 5, "Turn left", 0.4, 1L)));
 
-        System.out.println("LatLng table count : " + latLngRepository.count());
-        System.out.println("Direction table count : " + directionRepository.count());
+        LOG.info("LatLng table count : {}", latLngRepository.count());
+        LOG.info("Direction table count : {}", directionRepository.count());
 
         LOG.info("Bootstrapping sample app data done.");
     }
