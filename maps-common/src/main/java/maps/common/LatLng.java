@@ -1,14 +1,15 @@
 package maps.common;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import java.util.Objects;
 
 @Entity
 public class LatLng {
+    @Id
+    @GeneratedValue
+    private Long id;
 
     private double lat;
     private double lng;
@@ -21,6 +22,14 @@ public class LatLng {
         this.lat = lat;
         this.lng = lng;
         this.label = label;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public double getLat() {
