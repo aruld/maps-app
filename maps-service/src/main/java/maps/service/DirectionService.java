@@ -9,6 +9,7 @@ import maps.common.MapProvider;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import javax.inject.Inject;
 import javax.inject.Singleton;
 import java.io.IOException;
 import java.util.HashMap;
@@ -27,6 +28,12 @@ public class DirectionService {
 
     private Map<LatLngPair, String> appleDirections = new HashMap<>();
     private Map<LatLngPair, String> googleDirections = new HashMap<>();
+
+    @Inject
+    DirectionRepository directionRepository;
+
+    @Inject
+    LatLngRepository latLngRepository;
 
     public DirectionService() {
         LOG.info("Initializing sample data for maps ...");

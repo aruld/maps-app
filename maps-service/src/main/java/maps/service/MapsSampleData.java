@@ -135,8 +135,8 @@ public class MapsSampleData {
 
     private static String googleHq = "1600 Amphitheatre Pkwy, Mountain View, CA 94043";
     private static String appleHq = "1 Infinite Loop, Cupertino, CA 95014";
-    public static LatLng apple = new LatLng(37.331699, -122.030190);
-    public static LatLng google = new LatLng(37.423199, -122.084068);
+    public static LatLng apple = new LatLng(37.331699, -122.030190, Places.apple.name());
+    public static LatLng google = new LatLng(37.423199, -122.084068, Places.google.name());
 
 
     public static LatLngPair appleToGoogle = new LatLngPair(apple, google);

@@ -4,3 +4,5 @@
 /maps-common/build/
 /maps-common/out/
 /maps-common/out/production/classes/
+/.idea
+/maps-common/.idea

@@ -4,15 +4,48 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.persistence.Entity;
 import java.util.Objects;
 
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
+@Entity
 public class LatLng {
 
     private double lat;
     private double lng;
+    private String label;
+
+    public LatLng() {
+    }
+
+    public LatLng(double lat, double lng, String label) {
+        this.lat = lat;
+        this.lng = lng;
+        this.label = label;
+    }
+
+    public double getLat() {
+        return lat;
+    }
+
+    public void setLat(double lat) {
+        this.lat = lat;
+    }
+
+    public double getLng() {
+        return lng;
+    }
+
+    public void setLng(double lng) {
+        this.lng = lng;
+    }
+
+    public String getLabel() {
+        return label;
+    }
+
+    public void setLabel(String label) {
+        this.label = label;
+    }
 
     @Override
     public String toString() {
