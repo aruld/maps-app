@@ -8,7 +8,7 @@ application:
       deepLinking: true
       urls:
         - name: maps-server
-          url: /api-docs/swagger/maps-server-0.1.yml
+          url: /api-docs/swagger/maps-server-0.2.yml
 ---
 micronaut:
     application:
