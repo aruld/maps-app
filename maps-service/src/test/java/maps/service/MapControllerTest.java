@@ -39,8 +39,10 @@ public class MapControllerTest {
 
     @Test
     public void getDirections() {
-        HttpRequest request = HttpRequest.GET("/apple?src=apple&dest=google");
-        List<DirectionDTO> directions = client.toBlocking().retrieve(request, Argument.of(List.class, DirectionDTO.class));
+        List<DirectionDTO> directions = client.toBlocking().retrieve(HttpRequest.GET("/apple?src=apple&dest=google"), Argument.listOf(DirectionDTO.class));
+        assertEquals(6, directions.size());
+
+        directions = client.toBlocking().retrieve(HttpRequest.GET("/fastest?src=apple&dest=google"), Argument.listOf(DirectionDTO.class));
         assertEquals(6, directions.size());
     }
 
