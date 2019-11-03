@@ -21,7 +21,7 @@ repositories {
 
 dependencyManagement {
     imports {
-        mavenBom 'io.micronaut:micronaut-bom:1.2.0'
+        mavenBom 'io.micronaut:micronaut-bom:1.2.5'
     }
 }
 
@@ -33,14 +33,14 @@ configurations {
 dependencies {
     annotationProcessor "io.micronaut:micronaut-inject-java"
     annotationProcessor "io.micronaut:micronaut-validation"
-    annotationProcessor 'io.micronaut.data:micronaut-data-processor:1.0.0.M1'
+    annotationProcessor 'io.micronaut.data:micronaut-data-processor:1.0.0.M4'
     compile "io.micronaut:micronaut-discovery-client"
     compile "io.micronaut:micronaut-http-client"
     compile "io.micronaut:micronaut-http-server-netty"
     compile "io.micronaut:micronaut-inject"
     compile "io.micronaut:micronaut-validation"
     compile "io.micronaut:micronaut-runtime"
-    compile "io.micronaut.data:micronaut-data-jdbc:1.0.0.M1"
+    compile "io.micronaut.data:micronaut-data-jdbc:1.0.0.M4"
     compileOnly 'jakarta.persistence:jakarta.persistence-api:2.2.2'
     compile project(':maps-common')
     runtime "io.micronaut.configuration:micronaut-jdbc-hikari"
