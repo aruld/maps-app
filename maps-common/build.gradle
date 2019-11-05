@@ -14,7 +14,8 @@ repositories {
 
 dependencies {
     annotationProcessor "org.projectlombok:lombok:1.18.8"
-    compile "io.micronaut:micronaut-core:1.2.5"
+    compile "io.micronaut:micronaut-inject:1.2.5"
+    annotationProcessor "io.micronaut:micronaut-inject-java:1.2.5"
     compileOnly 'org.projectlombok:lombok:1.18.8'
     testCompile group: 'junit', name: 'junit', version: '4.12'
 }

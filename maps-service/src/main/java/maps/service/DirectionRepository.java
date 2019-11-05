@@ -15,6 +15,4 @@ public interface DirectionRepository extends CrudRepository<Direction, Long> {
 
     List<DirectionDTO> findByStartAndEndAndProviderOrderByPositionAsc(Place start, Place end, MapProvider provider);
 
-    // this works, not the DTO variant above
-    //List<Direction> findByStartAndEndAndProviderOrderByPositionAsc(Place start, Place end, MapProvider provider);
 }
