@@ -8,7 +8,7 @@ import io.swagger.v3.oas.annotations.info.License;
 @OpenAPIDefinition(
         info = @Info(
                 title = "Maps Server",
-                version = "0.1",
+                version = "0.2",
                 description = "Maps API",
                 license = @License(name = "Apache 2.0", url = "https://www.apache.org/licenses/LICENSE-2.0")
         )
